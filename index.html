@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>现在距离毕业还剩</p>
+    <p id="time"></p>
+    <script>
+        setInterval(function () {
+            var graduate = new Date('2022-08-30').getTime() - new Date().getTime();
+            var D = parseInt(graduate / 1000 / 60 / 60 / 24);
+            var H = parseInt(graduate % (1000 * 60 * 60 * 24) / (60 * 60 * 1000))
+            var M = parseInt(graduate % (1000 * 60 * 60) / (60 * 1000))
+            var S = parseInt(graduate % (1000 * 60 * 1000) % (60 * 1000) / 1000)
+            var time = document.getElementById('time');
+            time.innerText = D + '天' + H + '小时' + M + '分钟' + S + '秒'
+            
+        },1000)
+    </script>
+</body>
+
+</html>
